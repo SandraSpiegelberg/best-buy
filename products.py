@@ -1,5 +1,7 @@
+"""Product management module for a store.
+This module defines the Product class, which represents a product in a store."""
 class Product:
-    """A class representing a product in a store. 
+    """Class representing a product in a store. 
     The product has attributes such as name, price, quantity, 
     and if it is active or not."""
     def __init__(self, name: str, price: float | int, quantity: int):
