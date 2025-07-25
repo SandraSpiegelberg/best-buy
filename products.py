@@ -1,5 +1,7 @@
 """Product management module for a store.
 This module defines the Product class, which represents a product in a store."""
+
+
 class Product:
     """Class representing a product in a store. 
     The product has attributes such as name, price, quantity, 
@@ -59,7 +61,8 @@ class Product:
 
 
     def buy(self, quantity: int) -> float:
-        """Processes a purchase of the product, reducing the quantity and returning the total price."""
+        """Processes a purchase of the product, reducing the quantity and 
+        returning the total price."""
         if self.is_active():
             if not isinstance(quantity, int):
                 raise TypeError("Quantity must be an integer")
@@ -71,8 +74,7 @@ class Product:
             if self.quantity == 0:
                 self.deactivate()
             return quantity * self.price
-        else:
-            raise ValueError("Product is not active, cannot buy")
+        raise ValueError("Product is not active, cannot buy")
 
 
 def main():

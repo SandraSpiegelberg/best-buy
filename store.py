@@ -2,6 +2,7 @@
 This module defines the Store class, which """
 from products import Product
 
+
 class Store:
     """Class representing a Store that contains a list of all existing products."""
     def __init__(self, product_list):
@@ -80,6 +81,7 @@ def main():
     print(best_buy.get_total_quantity())
     print(best_buy.order([(products[0], 1), (products[1], 2)]))
     print(best_buy.get_total_quantity())
+
 
 if __name__ == '__main__':
     main()

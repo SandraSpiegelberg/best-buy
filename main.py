@@ -1,6 +1,5 @@
 """Main module for the Best Buy store application.
 This module initializes the store with products and provides a menu for user interaction."""
-
 from products import Product
 from store import Store
 
@@ -84,7 +83,6 @@ MENU = {1: {'description': "List all products in the store",
 
 def start(store_obj: Store):
     """Main function to show menu and handle user input."""
-
     # Menu Loop
     while True:
         print(f"\n{'*' * 10} Store Menu {'*' * 10}\n")
