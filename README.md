@@ -1,4 +1,4 @@
-# Movie_database
+# Best-Buy
 ## About 
 
 This is a little Python project in OOP. The user can navigate through the menu in the terminal and place an order in a store. 
