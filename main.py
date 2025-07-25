@@ -59,13 +59,10 @@ def make_order(store_obj: Store):
             print("Product added to list!")
 
     if shopping_list:
-        try:
-            total_price = store_obj.order(shopping_list)
-        except ValueError as e:
-            print(f"Error while making order! {e}")
-            return
-        print(f"{'*' * 10} Order made! {'*' * 10}")
-        print(f"Total payment: ${total_price:.2f}")
+        total_price = store_obj.order(shopping_list)
+        if total_price > 0:
+            print(f"{'*' * 10} Order made! {'*' * 10}\n Total payment: ${total_price:.2f}")
+
 
 def exit_menu():
     """Exits the menu."""

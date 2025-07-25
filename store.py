@@ -52,9 +52,19 @@ class Store:
         where each tuple has two items a Product and the quantity to buy."""
         total_price = 0
         for product, quantity in shopping_list:
-            if not isinstance(product, Product):
-                raise TypeError("Each item in shopping_list must be a Product")
-            total_price += product.buy(quantity)
+            try:
+                if not isinstance(product, Product):
+                    raise TypeError("Each item in shopping_list must be a Product")
+                if not isinstance(quantity, int) or quantity < 0:
+                    raise ValueError("Quantity must be a positive number.")
+                product.buy(quantity)
+                total_price += product.price * quantity
+            except ValueError as e:
+                if total_price <=0:
+                    print(f"Error while making order! {e}")
+            except TypeError as e:
+                if total_price <= 0:
+                    print(f"Error while making order! {e}")
         return total_price
 
 
