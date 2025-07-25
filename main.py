@@ -1,5 +1,6 @@
 """Main module for the Best Buy store application.
 This module initializes the store with products and provides a menu for user interaction."""
+import sys
 from products import Product
 from store import Store
 
@@ -41,8 +42,8 @@ def make_order(store_obj: Store):
             product_amount = int(product_amount)
             if product_num < 1 or product_num > len(store_obj.get_all_products()):
                 raise ValueError("Product number out of range.")
-        except ValueError as e:
-            print(f"Error adding product! {e}")
+        except ValueError as error:
+            print(f"Error adding product! {error}")
             continue
 
         product = store_obj.get_all_products()[product_num - 1]
@@ -66,7 +67,7 @@ def make_order(store_obj: Store):
 def exit_menu():
     """Exits the menu."""
     print("Exiting the menu, Goodbye!")
-    exit()
+    sys.exit()
 
 
 # Menu dictionary
@@ -97,8 +98,8 @@ def start(store_obj: Store):
                     MENU[user_choice]['function']()
             else:
                 raise ValueError("Invalid choice, please select a number between 1 and 4.")
-        except ValueError as e:
-            print(f"Please enter a valid number (1-4): {e}")
+        except ValueError as error:
+            print(f"Please enter a valid number (1-4): {error}")
 
 
 if __name__ == "__main__":

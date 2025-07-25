@@ -49,7 +49,7 @@ class Store:
 
     def order(self, shopping_list: list[(Product, int)]) -> float:
         """Orders products from the store, change the quantity of the product,
-        buys the products and returns the total price. shopping_list is a list of tuples 
+        buys the products and returns the total price. shopping_list is a list of tuples
         where each tuple has two items a Product and the quantity to buy."""
         total_price = 0
         for product, quantity in shopping_list:
@@ -60,12 +60,12 @@ class Store:
                     raise ValueError("Quantity must be a positive number.")
                 product.buy(quantity)
                 total_price += product.price * quantity
-            except ValueError as e:
-                if total_price <=0:
-                    print(f"Error while making order! {e}")
-            except TypeError as e:
+            except ValueError as error:
                 if total_price <= 0:
-                    print(f"Error while making order! {e}")
+                    print(f"Error while making order! {error}")
+            except TypeError as error:
+                if total_price <= 0:
+                    print(f"Error while making order! {error}")
         return total_price
 
 

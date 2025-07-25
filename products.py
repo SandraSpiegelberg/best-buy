@@ -3,8 +3,8 @@ This module defines the Product class, which represents a product in a store."""
 
 
 class Product:
-    """Class representing a product in a store. 
-    The product has attributes such as name, price, quantity, 
+    """Class representing a product in a store.
+    The product has attributes such as name, price, quantity,
     and if it is active or not."""
     def __init__(self, name: str, price: float | int, quantity: int):
         if not isinstance(name, str):
@@ -61,7 +61,7 @@ class Product:
 
 
     def buy(self, quantity: int) -> float:
-        """Processes a purchase of the product, reducing the quantity and 
+        """Processes a purchase of the product, reducing the quantity and
         returning the total price."""
         if self.is_active():
             if not isinstance(quantity, int):
