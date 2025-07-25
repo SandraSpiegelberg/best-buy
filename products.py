@@ -53,9 +53,9 @@ class Product:
         self.active = False
 
 
-    def show(self):
+    def show(self) -> str:
         """Displays the product details."""
-        print(f"Product: {self.name}, Price: ${self.price}, Quantity: {self.quantity}")
+        return f"Product: {self.name}, Price: ${self.price}, Quantity: {self.quantity}"
 
 
     def buy(self, quantity: int) -> float:
@@ -84,11 +84,11 @@ def main():
     print(mac.buy(100))
     print(mac.is_active())
 
-    bose.show()
-    mac.show()
+    print(bose.show())
+    print(mac.show())
 
     bose.set_quantity(1000)
-    bose.show()
+    print(bose.show())
 
 if __name__ == '__main__':
     main()
