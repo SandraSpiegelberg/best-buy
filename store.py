@@ -58,8 +58,8 @@ class Store:
                     raise TypeError("Each item in shopping_list must be a Product")
                 if not isinstance(quantity, int) or quantity < 0:
                     raise ValueError("Quantity must be a positive number.")
-                product.buy(quantity)
-                total_price += product.price * quantity
+
+                total_price += product.buy(quantity)
             except ValueError as error:
                 if total_price <= 0:
                     print(f"Error while making order! {error}")
